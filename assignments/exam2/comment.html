@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comment</title>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU'
+	 crossorigin='anonymous'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<script src="store.js"></script>
+	<style>
+	.thin {
+    		border: 0.4pt solid white;
+    		max-width:100%;
+    		height:auto;
+		}
+	</style>
+</head>
+<body style="background-color: rgb(225,224,218);">
+	<h1 style="font-size: 40px; text-align: center;font-family:Lucida Console,Monaco,monospace" class="h">Comment Platform</h1>
+	<div class="thin" ></div>
+	<div class="page-header" >
+		<div class="container" >
+			<div class ="row" class="col-sm-12" style="height: 600px; background-color:white; width:100%;border-width: 2px; border-color: rgb(225,224,218); border-style: solid; box-shadow: 5px 5px 5px;">
+		<!-- ------------------------------------- -->
+				<h1 style="margin-left: 20px;">Post your comments below:</h1>
+
+		<!-- --------------------------------------------------- -->
+				<form style="margin-left: 20px;">
+  				<strong>Name: </strong>
+  				<input type="text" placeholder="Username" id = "n">
+  				<br></br>
+  				<textarea rows="4" cols="50" placeholder="Enter here..." id = "c" ></textarea>
+				</form>
+		<!-- ----------------------------------------------------------- -->
+				<br>
+				<form style="margin-left: 20px;">
+					<strong>Password: </strong>
+					<input type="text" placeholder="password" id="password">
+					<!-- ----------------- --------->
+  					<button onclick="call(1)">Submit</button>
+  					<!-- ----------------------- -->
+				</form>
+				<h2 style="margin-left: 20px;" >Comments:</h2>
+				<div id = "comment" ></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
