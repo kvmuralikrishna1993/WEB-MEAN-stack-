@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>quiz</title>
+    </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+    /* p{
+        padding-left:50px;
+    }
+     */
+    </style>
+    <body>
+        <h1><center>quiz</center></h1>
+        <div class="container">
+        <div class="row">
+            <p id="question"></p>
+            <p id="options"></p>
+            <div class="buttons">
+                <button onclick="previous()" style="float:left;">previous</button>
+                <button onclick="next()" style="float:right;">next</button>
+            </div>
+
+        </div>
+        </div>
+        <script>
+            var data = '{"questions":[{"question":"prime minister of india?","option1":"narendra modi","option2":"rahul gandhi","hints":"this is hint for question1","answer":"narendra modi"},{"question":"tg cm?","option1":"kcr","option2":"chandrababu","hints":"this is hint for question2","answer":"kcr"}]}'
+            var object = JSON.parse(data);
+            
+            var i=0;
+            process(0);
+            function previous(){
+                if(i<=0){
+                    i=0;
+                }else {
+                    i=i-1;
+                }
+                process(i);
+            }
+            function next(){
+                if(i>=1){
+                    i=1;
+                }else {
+                    i=i+1;
+                }
+                process(i);
+            }
+            function process(i){
+                document.getElementById("question").innerHTML=object.questions[i].question;
+                document.getElementById("options").innerHTML='<button onclick=\"hint('+i+')\">hint</button><br><p id="text"></p><br><input type="radio" name="options" value="object.questions['+i+'].option1" onclick=\"check(object.questions['+i+'].option1,'+i+')\">'+object.questions[i].option1+'<br><input type="radio" name="options" value="object.questions['+i+'].option2" onclick=\"check(object.questions['+i+'].option2,'+i+')\">'+object.questions[i].option2+'<p id="display"></p>';
+            }
+            function check(v, index){
+                if(v==object.questions[index].answer){
+                    document.getElementById("display").innerHTML="CORRECT ANSWER";
+                } else {
+                    document.getElementById("display").innerHTML="WRONG ANSWER";
+                }
+            }
+            function hint(i){
+                document.getElementById("text").innerHTML='<h3>'+"hint is:"+object.questions[i].hints+'</h3>'
+            }
+        </script>
+    </body>
+</html>
