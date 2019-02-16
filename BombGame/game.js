@@ -31,7 +31,9 @@ function refresh(t1) {
 				cell.setAttribute("class","grid-item");
 				cell.setAttribute("onclick","check(id)");
 				// cell.setAttribute("style","background-color:red,")
-				cell.setAttribute("style","font-size:75px");
+				cell.setAttribute("style","font-size:50px");
+				cell.style.width = "100px";
+				cell.style.height = "100px";
 				cell.style.backgroundColor = "rgb(40,41,35)";
 				cell.style.color = "white";
 				cell.style.fontFamily = "courier new"
@@ -115,7 +117,7 @@ function display(user,count) {
 		// adding present value to the previous inner value
 		// (x,y) ==> present values and text ==> is previous value
 		// initally text is null string.
-  		text = "<strong>"+user+": "+"</strong>"+"<br>"+"Number of attempts:"+(count+1)+
+  		text = "<strong>"+user+" "+"</strong>"+"<br>"+"Number of attempts:"+(count+1)+
   		"<br>"+"Score:"+(max-count-1)+"<br>"+text;
  	 	document.getElementById("score").innerHTML = text;
 
